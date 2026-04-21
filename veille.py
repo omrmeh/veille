@@ -179,7 +179,7 @@ def synthesize_category(category, articles):
 
     response = client.messages.create(
         model="claude-sonnet-4-5",
-        max_tokens=1200,
+        max_tokens=2000,
         messages=[
             {
                 "role": "user",
@@ -189,10 +189,10 @@ Voici les derniers articles de la catégorie "{category}".
 
 Ta mission : produire une synthèse dense et actionnable en français, structurée en deux parties séparées par "|||" :
 
-PARTIE 1 — SYNTHÈSE (5-7 phrases) :
+PARTIE 1 — SYNTHÈSE (7-8 phrases) :
 Résume les faits et tendances clés du jour dans cette catégorie. Regroupe les sujets connexes. Cite les sources entre parenthèses. Sois factuel et précis.
 
-PARTIE 2 — ANALYSE & ENJEUX (6-8 phrases) :
+PARTIE 2 — ANALYSE & ENJEUX (9-10 phrases) :
 Explique les implications stratégiques en profondeur. Pour chaque point complexe, explique les mécanismes sous-jacents comme si tu parlais à un lecteur intelligent mais non-spécialiste. Réponds à : Pourquoi c'est important ? Quels sont les acteurs en jeu ? Quelles sont les dynamiques de fond ? Quelles implications pour le cloud, la cybersécurité ou la géopolitique ? Quelles tendances de long terme cela révèle-t-il ?
 Quand les sujets sont trop techniques (exploits, acronymes), prends soin d'expliquer et quand tu le juges pertinent de donner des exemples concrets, comme si tu parlais à un lecteur intelligent mais non technique.
 Sélectionne les 5-8 articles les plus importants parmi ceux fournis. Ignore les articles trop anecdotiques.
