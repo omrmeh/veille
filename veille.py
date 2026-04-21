@@ -117,7 +117,7 @@ CATEGORY_ICONS = {
     "Finance & Macro": "📈",
 }
 
-ARTICLES_PAR_SOURCE = 4
+ARTICLES_PAR_SOURCE = 10
 FETCH_TIMEOUT_SECONDS = 12
 REQUEST_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
