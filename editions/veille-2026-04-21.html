@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille — 21 April 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f5f2eb;
+            --surface: #ffffff;
+            --surface2: #f0ede6;
+            --border: #ddd9d0;
+            --accent: #1a472a;
+            --accent2: #c17f24;
+            --text: #1c1c1c;
+            --text-muted: #666;
+            --text-dim: #999;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--text); font-family: 'IBM Plex Sans', sans-serif; font-weight: 300; line-height: 1.75; }
+        .header { background: var(--accent); color: white; padding: 2rem 3rem; display: flex; justify-content: space-between; align-items: flex-end; }
+        .header-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6; margin-bottom: 0.3rem; }
+        .header-title { font-family: 'Libre Baskerville', serif; font-size: 1.8rem; font-weight: 400; letter-spacing: -0.01em; }
+        .header-right { text-align: right; opacity: 0.7; font-size: 0.8rem; }
+        .header-nav { display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem; justify-content: flex-end; }
+        .header-nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.75rem; transition: color 0.2s; }
+        .header-nav a:hover { color: white; }
+        .nav { background: var(--surface); border-bottom: 1px solid var(--border); display: flex; overflow-x: auto; scrollbar-width: none; padding: 0 2rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .nav::-webkit-scrollbar { display: none; }
+        .nav-item { padding: 0.9rem 1rem; font-size: 0.75rem; color: var(--text-muted); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .nav-item:hover { color: var(--accent); border-bottom-color: var(--accent); }
+        .main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 3rem; }
+        .cat-section { margin-bottom: 3rem; background: var(--surface); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
+        .cat-header { display: flex; align-items: center; gap: 0.8rem; padding: 1rem 1.5rem; background: var(--surface2); border-bottom: 1px solid var(--border); }
+        .cat-icon { font-size: 1rem; }
+        .cat-title { font-family: 'Libre Baskerville', serif; font-size: 1rem; font-weight: 700; }
+        .cat-meta { margin-left: auto; font-size: 0.7rem; color: var(--text-dim); }
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+        .block { padding: 1.4rem 1.5rem; }
+        .synthese-block { border-right: 1px solid var(--border); }
+        .analyse-block { background: #fffdf7; }
+        .block-label { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent2); font-weight: 500; margin-bottom: 0.6rem; }
+        .block p { font-size: 0.855rem; line-height: 1.75; color: #2a2a2a; }
+        .refs-block { border-top: 1px solid var(--border); padding: 0.8rem 1.5rem; background: var(--surface2); }
+        .refs-label { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.5rem; }
+        .refs-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .ref-link { font-size: 0.72rem; color: var(--text-muted); text-decoration: none; background: white; border: 1px solid var(--border); padding: 0.2rem 0.5rem; border-radius: 2px; transition: all 0.15s; max-width: 280px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .ref-link:hover { color: var(--accent); border-color: var(--accent); }
+        .ref-source { color: var(--accent2); font-weight: 500; }
+        .footer { border-top: 1px solid var(--border); padding: 1.5rem 3rem; text-align: center; font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.05em; }
+        @media (max-width: 768px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .synthese-block { border-right: none; border-bottom: 1px solid var(--border); }
+            .main { padding: 1.5rem; }
+            .header { padding: 1.5rem; flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div>
+        <div class="header-label">Veille stratégique</div>
+        <h1 class="header-title">Intelligence du jour</h1>
+    </div>
+    <div class="header-right">
+        21 April 2026<br>
+        39 sources agrégées
+        <div class="header-nav">
+            <a href="index.html">← Toutes les éditions</a>
+        </div>
+    </div>
+</header>
+<nav class="nav">
+    <a href="#curated-and-digests" class="nav-item">📋 Curated & Digests</a><a href="#géopolitique--occident-and-académique" class="nav-item">🎓 Géopolitique — Occident & Académique</a><a href="#géopolitique--global-south-and-iran" class="nav-item">🌍 Géopolitique — Global South & Iran</a><a href="#cyber--gouvernance-and-policy" class="nav-item">⚖️ Cyber — Gouvernance & Policy</a><a href="#tech--aws-and-cloud" class="nav-item">☁️ Tech — AWS & Cloud</a><a href="#tech--cybersécurité" class="nav-item">🔐 Tech — Cybersécurité</a><a href="#ia-and-llms" class="nav-item">🤖 IA & LLMs</a><a href="#finance-and-macro" class="nav-item">📈 Finance & Macro</a>
+</nav>
+<main class="main">
+    
+        <section class="cat-section" id="curated-and-digests">
+            <div class="cat-header">
+                <span class="cat-icon">📋</span>
+                <h2 class="cat-title">Curated & Digests</h2>
+                <span class="cat-meta">4 articles · 1 sources</span>
+            </div>
+            <div class="content-grid">
+                <div class="block synthese-block">
+                    <div class="block-label">Synthèse</div>
+                    <p>Deux menaces émergentes majeures se dessinent dans le paysage de la cybersécurité. Des acteurs malveillants exploitent désormais des fichiers .WAV (fichiers audio) comme vecteurs de diffusion de malwares, notamment via un package PyPI compromis de Telnyx qui cache des charges malveillantes dans ces fichiers audio (SANS ISC, BleepingComputer). Parallèlement, la communauté sécurité fait face à une explosion du nombre de CVE publiées quotidiennement, transformant la gestion des vulnérabilités en défi majeur pour les équipes défensives (SANS ISC). Cette inflation des CVE recensées au cours de la dernière décennie crée une surcharge informationnelle qui complique la priorisation des correctifs. Face à ce déluge, le recours au système EPSS (Exploit Prediction Scoring System) émerge comme solution pour trier et prioriser les vulnérabilités réellement critiques. Ces deux tendances illustrent l'évolution des techniques d'attaque vers la discrétion et la complexité croissante de la posture défensive.</p>
+                </div>
+                <div class="block analyse-block">
+                    <div class="block-label">Analyse & enjeux</div>
+                    <p>L'utilisation de fichiers .WAV pour dissimuler des malwares représente une évolution significative dans les techniques de stéganographie malveillante. Concrètement, les attaquants encodent du code malveillant dans les données d'un fichier audio apparemment légitime, exploitant ainsi la confiance accordée aux formats multimédia et contournant certains systèmes de détection traditionnels qui se concentrent sur les exécutables classiques. Cette technique est particulièrement insidieuse car un fichier audio éveille moins de suspicion qu'un .exe et peut traverser des filtres de sécurité basiques. Pour les environnements cloud AWS, cela souligne l'importance de scanner tous les types de fichiers, même ceux considérés comme "inertes", et d'implémenter des contrôles sur les dépendances de développement comme les packages PyPI. Le problème de l'explosion des CVE révèle quant à lui une crise systémique : avec des milliers de vulnérabilités publiées annuellement, les équipes de sécurité ne peuvent matériellement pas tout corriger et doivent prioriser. L'EPSS (Exploit Prediction Scoring System) tente de résoudre ce problème en prédisant statistiquement quelles vulnérabilités seront effectivement exploitées dans les 30 jours, contrairement au CVSS qui mesure uniquement la sévérité théorique. Cette approche basée sur les données d'exploitation réelles permet d'allouer les ressources limitées vers les risques concrets plutôt que théoriques. Ces deux tendances convergent vers une même réalité : les défenseurs doivent adopter des approches plus intelligentes et automatisées face à des attaquants innovants et un volume de menaces ingérable manuellement, avec des implications directes pour la sécurisation des workloads cloud et des chaînes d'approvisionnement logicielles.</p>
+                </div>
+            </div>
+            <div class="refs-block">
+                <div class="refs-label">Sources du jour</div>
+                <div class="refs-list"><a href="https://isc.sans.edu/diary/rss/32910" target="_blank" class="ref-link">↗ <span class="ref-source">[SANS ISC]</span> A .WAV With A Payload, (Tue, Apr 21st)</a><a href="https://isc.sans.edu/diary/rss/32916" target="_blank" class="ref-link">↗ <span class="ref-source">[SANS ISC]</span> ISC Stormcast For Tuesday, April 21st, 2026 https://isc.sans.edu/podcastdetail/9...</a><a href="https://isc.sans.edu/diary/rss/32914" target="_blank" class="ref-link">↗ <span class="ref-source">[SANS ISC]</span> Handling the CVE Flood With EPSS, (Mon, Apr 20th)</a><a href="https://isc.sans.edu/diary/rss/32912" target="_blank" class="ref-link">↗ <span class="ref-source">[SANS ISC]</span> ISC Stormcast For Monday, April 20th, 2026 https://isc.sans.edu/podcastdetail/98...</a></div>
+            </div>
+        </section>
+        <section class="cat-section" id="géopolitique--occident-and-académique">
+            <div class="cat-header">
+                <span class="cat-icon">🎓</span>
+                <h2 class="cat-title">Géopolitique — Occident & Académique</h2>
+                <span class="cat-meta">36 articles · 9 sources</span>
+            </div>
+            <div class="content-grid">
+                <div class="block synthese-block">
+                    <div class="block-label">Synthèse</div>
+                    <p>La guerre en Iran structure l'actualité géopolitique avec plusieurs dimensions interconnectées. Au moins 26 navires iraniens ont réussi à contourner le blocus américain dans le détroit d'Ormuz depuis le 13 avril, démontrant les limites pratiques de l'action militaire américaine (Le Grand Continent). Le conflit expose les infrastructures technologiques critiques : des drones iraniens ont frappé des data centers à Bahreïn et aux EAU, tandis que les câbles sous-marins du Golfe sont menacés (Stimson Center). Le Pakistan joue un rôle de médiateur entre l'Iran et les États-Unis, motivé par ses problèmes énergétiques et les tensions à sa frontière iranienne, bien que ses espoirs de bénéfices économiques américains semblent illusoires (Chatham House). Foreign Affairs analyse cette guerre comme un "jeu de perceptions" où les attentes façonnent l'issue du conflit. Parallèlement, la Chine exploite la crise énergétique pour menacer les Philippines de couper son "aide énergétique", alors que Manille mène des exercices militaires avec les États-Unis et la France, tandis que les exportations chinoises de cellules photovoltaïques bondissent de 80% en mars, portées par la demande accrue en énergies renouvelables (Le Grand Continent). En Europe, le départ d'Orbán pourrait débloquer les décisions sur l'aide à l'Ukraine et les sanctions contre la Russie et Israël, bien que les États membres aient rejeté la suspension de l'accord d'association avec Israël (Politico). Les services de renseignement néerlandais alertent sur l'accélération des cyberattaques russes utilisant l'IA contre l'Europe (Politico).</p>
+                </div>
+                <div class="block analyse-block">
+                    <div class="block-label">Analyse & enjeux</div>
+                    <p>Le conflit iranien révèle une nouvelle vulnérabilité stratégique majeure : l'interdépendance entre infrastructures cloud et stabilité géopolitique. Lorsque des drones frappent des data centers dans le Golfe, ce ne sont pas seulement des bâtiments qui sont visés, mais l'épine dorsale numérique de l'économie mondiale. Ces centres hébergent des services cloud critiques pour des milliers d'entreprises internationales, et les câbles sous-marins qui traversent le détroit d'Ormuz transportent une part significative du trafic Internet entre l'Asie et l'Europe. Cette fragilité illustre une tendance de fond : la concentration géographique des infrastructures numériques dans des zones géopolitiquement instables crée des points de défaillance systémiques. Le contournement du blocus américain par 26 navires iraniens démontre l'inefficacité croissante de la coercition militaire traditionnelle face à des réseaux décentralisés d'acteurs non-étatiques — un phénomène qu'on observe aussi dans le cyber, où les attaques russes utilisant l'IA se multiplient malgré les sanctions. L'instrumentalisation chinoise de la dépendance énergétique philippine illustre comment les crises créent des opportunités de chantage économique : Pékin transforme l'aide en levier de pression politique, une forme moderne de guerre économique. Cette dynamique se reflète dans la stratégie américaine que le Peterson Institute qualifie de passage "d'assureur du monde en racketteur", marquant une transformation profonde de l'ordre libéral. Pour les acteurs cloud, ces évolutions imposent une réévaluation urgente : redondance géographique accrue, diversification des routes de connectivité, et planification de continuité face à des disruptions géopolitiques qui ne sont plus des hypothèses mais des réalités opérationnelles récurrentes.</p>
+                </div>
+            </div>
+            <div class="refs-block">
+                <div class="refs-label">Sources du jour</div>
+                <div class="refs-list"><a href="https://www.foreignaffairs.com/united-states/how-fight-economic-war-fishman" target="_blank" class="ref-link">↗ <span class="ref-source">[Foreign Affairs]</span> How to Fight an Economic War</a><a href="https://www.foreignaffairs.com/north-korea/how-north-korea-won-jung-pak" target="_blank" class="ref-link">↗ <span class="ref-source">[Foreign Affairs]</span> How North Korea Won</a><a href="https://www.foreignaffairs.com/iran/iran-war-expectations-game" target="_blank" class="ref-link">↗ <span class="ref-source">[Foreign Affairs]</span> The Iran War Is an Expectations Game</a><a href="https://www.foreignaffairs.com/venezuela/venezuela-needs-regime-change-javier-corrales" target="_blank" class="ref-link">↗ <span class="ref-source">[Foreign Affairs]</span> Venezuela Needs Regime Change</a><a href="https://www.chathamhouse.org/2026/04/what-does-pakistan-gain-its-iran-us-diplomacy" target="_blank" class="ref-link">↗ <span class="ref-source">[Chatham House]</span> What does Pakistan gain from its Iran–US diplomacy?</a><a href="https://www.chathamhouse.org/2026/04/after-three-years-war-sudans-civilians-need-stronger-support" target="_blank" class="ref-link">↗ <span class="ref-source">[Chatham House]</span> After three years of war, Sudan’s civilians need stronger support</a></div>
+            </div>
+        </section>
+        <section class="cat-section" id="géopolitique--global-south-and-iran">
+            <div class="cat-header">
+                <span class="cat-icon">🌍</span>
+                <h2 class="cat-title">Géopolitique — Global South & Iran</h2>
+                <span class="cat-meta">20 articles · 5 sources</span>
+            </div>
+            <div class="content-grid">
+                <div class="block synthese-block">
+                    <div class="block-label">Synthèse</div>
+                    <p>Le conflit au Moyen-Orient continue de générer des coûts humains et économiques massifs, avec un rapport ONU-UE évaluant à 71 milliards de dollars sur 10 ans la reconstruction de Gaza, où près de 400 000 logements ont été endommagés et le développement humain a reculé d'un siècle (Al Jazeera, The Cradle). Ansarallah au Yémen menace d'une "escalade pour escalation" si la guerre américano-israélienne contre l'Iran reprend, soulignant une forte probabilité de reprise des hostilités (The Cradle). Un article d'analyse révèle la vulnérabilité critique d'Israël face aux menaces sur ses infrastructures de dessalement, l'Iran ayant la capacité de cibler ce talon d'Achille économique et militaire (The Cradle). En Asie du Sud, la Chine tente de médier entre le Pakistan et l'Afghanistan après une escalade militaire en février 2026, dans une région déstabilisée par le conflit américano-israélo-iranien (South Asian Voices). Un article examine les risques d'escalation liés à l'utilisation de l'intelligence artificielle dans le ciblage militaire, notamment dans le contexte indo-pakistanais, citant l'usage américain d'outils IA comme Maven dans le conflit au Moyen-Orient (South Asian Voices).</p>
+                </div>
+                <div class="block analyse-block">
+                    <div class="block-label">Analyse & enjeux</div>
+                    <p>La facture de reconstruction de Gaza illustre une réalité souvent négligée des conflits modernes : le coût de destruction dépasse largement les budgets militaires initiaux et crée des dépendances géopolitiques durables. Avec 71 milliards sur 10 ans nécessaires, se pose la question cruciale du financement et donc du contrôle politique post-conflit – qui paie dicte généralement les conditions de reconstruction et influence l'architecture politique future. Cette dynamique transforme la reconstruction en enjeu de souveraineté autant qu'humanitaire.
+
+L'analyse sur les infrastructures de dessalement révèle une vulnérabilité structurelle majeure des économies modernes : Israël dépend à 80% du dessalement pour son eau potable, ce qui signifie que quelques frappes précises sur ces installations pourraient paralyser l'économie, l'armée et la population civile en quelques jours. Cette dépendance à des infrastructures critiques centralisées crée un nouveau type de dissuasion asymétrique où un acteur moins puissant (Iran) peut menacer de manière crédible un adversaire technologiquement supérieur. Pour le secteur cloud et la cybersécurité, cela rappelle l'importance vitale de la résilience des infrastructures critiques – une cyberattaque sur les systèmes de contrôle de ces usines aurait des effets similaires à une frappe cinétique.
+
+L'entrée de la Chine comme médiateur entre Pakistan et Afghanistan signale un réalignement géopolitique majeur en Asie du Sud, traditionnellement zone d'influence américaine. Cette médiation chinoise s'inscrit dans une stratégie de long terme visant à sécuriser les routes de la Belt and Road Initiative et à se positionner comme alternative diplomatique aux États-Unis dans les zones de conflit. La mention du conflit américano-israélo-iranien comme facteur déstabilisant la région afghano-pakistanaise montre comment les conflits régionaux s'interconnectent désormais à l'échelle globale.
+
+L'usage d'IA pour le ciblage militaire, comme le système Maven américain, représente une révolution dans la conduite des guerres avec des implications profondes pour l'escalade : ces systèmes permettent de traiter des volumes massifs de données de satellites et drones pour identifier des cibles plus rapidement et en plus grand nombre. Le risque est double – d'une part, la tentation d'augmenter le tempo opérationnel parce que la technologie le permet, d'autre part, la possibilité d'erreurs systémiques amplifiées par l'automatisation. Dans le contexte nucléaire indo-pakistanais, cela pourrait raccourcir dangereusement les fenêtres de décision et accroître les risques de mauvaise interprétation. Pour les acteurs cloud comme AWS, cela soulève des questions éthiques sur la fourniture d'infrastructure pour ces systèmes militaires et l'importance des garde-fous dans les applications d'IA à haut risque.</p>
+                </div>
+            </div>
+            <div class="refs-block">
+                <div class="refs-label">Sources du jour</div>
+                <div class="refs-list"><a href="https://www.aljazeera.com/video/inside-story/2026/4/21/whats-the-bill-to-rebuild-gaza-and-who-will-pay?traffic_source=rss" target="_blank" class="ref-link">↗ <span class="ref-source">[Al Jazeera Middle East]</span> What’s the bill to rebuild Gaza, and who will pay?</a><a href="https://www.aljazeera.com/news/2026/4/21/israeli-sexual-violence-helping-push-palestinians-from-west-bank-report?traffic_source=rss" target="_blank" class="ref-link">↗ <span class="ref-source">[Al Jazeera Middle East]</span> Israeli sexual violence helping push Palestinians from West Bank: Report</a><a href="https://www.aljazeera.com/news/2026/4/21/eu-court-rules-hungarys-lgbtq-law-violates-human-rights?traffic_source=rss" target="_blank" class="ref-link">↗ <span class="ref-source">[Al Jazeera Middle East]</span> EU court rules Hungary’s LGBTQ law violates human rights</a><a href="https://www.aljazeera.com/sports/liveblog/2026/4/21/live-real-madrid-vs-alaves-la-liga?traffic_source=rss" target="_blank" class="ref-link">↗ <span class="ref-source">[Al Jazeera Middle East]</span> LIVE: Real Madrid vs Alaves – La Liga</a><a href="https://www.tehrantimes.com/news/525229/Academics-Protest-Over-Attacks-on-Universities-and-Hospitals" target="_blank" class="ref-link">↗ <span class="ref-source">[Tehran Times]</span> Academics Protest Over Attacks on Universities and Hospitals</a><a href="https://www.tehrantimes.com/news/525230/13-martyred-in-Zionist-American-attack-on-Tehran-suburb" target="_blank" class="ref-link">↗ <span class="ref-source">[Tehran Times]</span> 13 martyred in Zionist-American attack on Tehran suburb</a></div>
+            </div>
+        </section>
+        <section class="cat-section" id="cyber--gouvernance-and-policy">
+            <div class="cat-header">
+                <span class="cat-icon">⚖️</span>
+                <h2 class="cat-title">Cyber — Gouvernance & Policy</h2>
+                <span class="cat-meta">12 articles · 3 sources</span>
+            </div>
+            <div class="content-grid">
+                <div class="block synthese-block">
+                    <div class="block-label">Synthèse</div>
+                    <p>L'Ofcom britannique enquête sur Telegram après que le Centre canadien pour la protection de l'enfance a signalé la présence et le partage de contenus pédopornographiques sur la plateforme (The Record). L'UE sanctionne deux réseaux de propagande russes, Euromore et Pravfond, accusés d'amplifier les narratives du Kremlin et de promouvoir la politique étrangère russe (The Record). L'Ukraine démantèle une "ferme à bots" qui fournissait des milliers de faux comptes Telegram aux services de renseignement russes pour des campagnes de désinformation (The Record). La plateforme cloud Vercel confirme une violation de sécurité via un outil tiers d'IA, Context.ai, dont l'attaque a débuté par un malware déguisé en triche pour Roblox, compromettant les identifiants d'un sous-ensemble de clients (The Record, CyberScoop). Des vulnérabilités critiques émergent dans les gestionnaires d'agents IA : Antigravity de Google présente une faille d'évasion de sandbox permettant l'exécution de code à distance malgré les paramètres de sécurité maximaux, tandis qu'Anthropic lance Mythos, un modèle capable de détecter les vulnérabilités rapidement mais incapable de guider leur remédiation (CyberScoop). La FTC américaine élargit son portefeuille sur l'IA avec l'application d'une nouvelle loi contre les deepfakes sexuels et la recherche de moyens pour bloquer les arnaques par clonage vocal (CyberScoop).</p>
+                </div>
+                <div class="block analyse-block">
+                    <div class="block-label">Analyse & enjeux</div>
+                    <p>La convergence des enquêtes sur Telegram illustre la pression réglementaire croissante sur les plateformes de messagerie cryptée : alors que ces services se sont développés sous la bannière de la protection de la vie privée, ils deviennent des zones grises où coexistent protection des dissidents et espaces non modérés. Le régulateur britannique agit dans un contexte post-Digital Services Act européen qui responsabilise juridiquement les plateformes sur les contenus illégaux, forçant même les acteurs historiquement réfractaires à collaborer avec les autorités sous peine de bannissement des marchés occidentaux. Cette dynamique révèle une tendance de fond : la fin de l'exception technologique où les plateformes échappaient aux règles traditionnelles de responsabilité éditoriale.
+
+L'affaire Vercel démontre un risque systémique majeur de l'écosystème cloud moderne : les chaînes d'intégrations SaaS créent des surfaces d'attaque exponentielles. Concrètement, un employé de Context.ai a téléchargé un logiciel malveillant pensant obtenir un avantage dans le jeu Roblox ; ce malware a volé ses identifiants professionnels donnant accès aux systèmes de Context.ai, qui disposait de permissions étendues chez Vercel, permettant finalement de compromettre les clients finaux. Cette cascade illustre pourquoi les architectures zero-trust et le principe du moindre privilège sont critiques : chaque intégration tierce devrait n'avoir que les permissions strictement nécessaires, isolées par client, et révocables instantanément. Pour les consultants cloud AWS, cela souligne l'importance des services comme IAM Access Analyzer et des architectures multi-comptes pour compartimenter les risques.
+
+Les vulnérabilités dans les gestionnaires d'agents IA (Antigravity, Mythos) révèlent un nouveau paradigme de sécurité : quand l'IA peut exécuter du code et interagir avec des systèmes, les attaques par injection de prompt deviennent l'équivalent des injections SQL mais avec des conséquences potentiellement plus graves. Un sandbox est une cage virtuelle censée isoler le code dangereux ; l'évasion de sandbox signifie qu'un attaquant peut sortir de cette cage et exécuter des commandes sur le système hôte réel. Le problème fondamental est que les agents IA doivent être suffisamment autonomes pour être utiles, mais cette autonomie crée précisément les vecteurs d'attaque. La remarque sur Mythos d'Anthropic est particulièrement révélatrice : automatiser la découverte de vulnérabilités sans la remédiation crée un déséquilibre dangereux qui pourrait avantager les attaquants, accélérant la course entre offensive et défensive dans la cybersécurité.
+
+L'élargissement du mandat de la FTC sur l'IA et les sanctions européennes contre la propagande russe signalent une volonté transatlantique de réguler proactivement les risques émergents plutôt que de réagir après des cr</p>
+                </div>
+            </div>
+            <div class="refs-block">
+                <div class="refs-label">Sources du jour</div>
+                <div class="refs-list"><a href="https://therecord.media/uk-regulator-to-probe-telegram-over-csam-allegations" target="_blank" class="ref-link">↗ <span class="ref-source">[The Record]</span> UK regulator to probe Telegram, teen chat sites for potential child safety viola...</a><a href="https://therecord.media/eu-targets-russian-propaganda-networks-sanctions" target="_blank" class="ref-link">↗ <span class="ref-source">[The Record]</span> EU targets two Russian propaganda networks with new sanctions</a><a href="https://therecord.media/cloud-platform-vercel-says-company-breached-through-ai-tool" target="_blank" class="ref-link">↗ <span class="ref-source">[The Record]</span> Cloud platform Vercel says company breached through third-party AI tool</a><a href="https://therecord.media/ukraine-sbu-busts-bot-farm-supplying-russian-spies" target="_blank" class="ref-link">↗ <span class="ref-source">[The Record]</span> Ukraine busts ‘bot farm’ supplying thousands of fake Telegram accounts to Russia...</a><a href="https://cyberscoop.com/anthropic-mythos-vulnerability-discovery-op-ed/" target="_blank" class="ref-link">↗ <span class="ref-source">[CyberScoop]</span> Mythos can find the vulnerability. It can’t tell you what to do about it.</a><a href="https://cyberscoop.com/google-antigravity-pillar-security-agent-sandbox-escape-remote-code-execution/" target="_blank" class="ref-link">↗ <span class="ref-source">[CyberScoop]</span> Vuln in Google’s Antigravity AI agent manager could escape sandbox, give attacke...</a></div>
+            </div>
+        </section>
+        <section class="cat-section" id="tech--aws-and-cloud">
+            <div class="cat-header">
+                <span class="cat-icon">☁️</span>
+                <h2 class="cat-title">Tech — AWS & Cloud</h2>
+                <span class="cat-meta">36 articles · 9 sources</span>
+            </div>
+            <div class="content-grid">
+                <div class="block synthese-block">
+                    <div class="block-label">Synthèse</div>
+                    <p>AWS lance Aurora Serverless amélioré avec jusqu'à 30% de gains de performance et une mise à l'échelle intelligente adaptée aux applications d'IA agentique (AWS What's New). La disponibilité générale d'AWS Interconnect permet désormais la connectivité privée multicloud entre AWS et d'autres fournisseurs, avec une nouvelle option "last-mile" simplifiant les connexions à haute vitesse (AWS Blog). Claude Opus 4.7 d'Anthropic arrive sur Amazon Bedrock avec un contexte d'1M de tokens et des capacités agentiques de codage renforcées, propulsé par un moteur d'inférence de nouvelle génération (AWS Blog). Une brèche de sécurité chez Vercel expose les risques liés aux variables d'environnement de plateforme via une attaque OAuth impliquant un outil d'IA (Hacker News). AWS publie plusieurs guides de sécurité sur le Model Context Protocol pour agents IA, la transformation de logs au format OCSF, et la collecte d'artefacts forensiques dans S3 (AWS Security Blog). MIT Technology Review souligne l'urgence de la gouvernance et sécurité des agents IA alors que les identités non-humaines explosent dans les entreprises (MIT Technology Review).</p>
+                </div>
+                <div class="block analyse-block">
+                    <div class="block-label">Analyse & enjeux</div>
+                    <p>La mise à l'échelle automatique d'Aurora Serverless révèle l'adaptation d'AWS aux charges de travail d'IA agentique : ces agents alternent entre pics d'activité intense et longues périodes d'inactivité imprévisibles, contrairement aux applications traditionnelles à usage stable. Cette évolution architecturale reflète une tendance majeure où l'infrastructure cloud doit anticiper des patterns de consommation radicalement différents, directement liés à la nature non-déterministe de l'IA. AWS Interconnect en disponibilité générale marque un tournant stratégique dans les guerres cloud : en permettant la connexion privée native entre AWS et d'autres clouds (Azure, Google Cloud), AWS reconnaît la réalité multicloud des entreprises tout en conservant son rôle de hub central. Cette stratégie de connectivité pourrait renforcer sa position dominante en devenant l'orchestrateur d'architectures hybrides, plutôt que de perdre des workloads complets vers des concurrents. L'incident de sécurité Vercel illustre une vulnérabilité émergente critique : lorsqu'un agent IA accède à des ressources via OAuth, il peut exploiter des variables d'environnement stockées en plateforme pour escalader ses privilèges de manière imprévisible. Contrairement à un code applicatif classique avec des chemins d'exécution fixes, un agent "raisonne" dynamiquement et peut découvrir et exploiter des vecteurs d'attaque non anticipés par les développeurs. Le guide AWS sur le Model Context Protocol souligne ce défi : vous devez présumer qu'un agent peut utiliser n'importe quel outil dans ses autorisations, rendant la sécurité par périmètre traditionnelle obsolète. L'explosion des identités non-humaines (agents, services, API) dépasse déjà celle des identités humaines dans certaines organisations, créant une surface d'attaque exponentielle qui nécessite des frameworks de gouvernance entièrement repensés autour de la traçabilité, l'audit continu et la révocation granulaire. La convergence entre infrastructure cloud élastique, IA agentique et sécurité Zero Trust définit le nouveau paradigme architectural où chaque composant autonome doit être traité comme potentiellement hostile par défaut.</p>
+                </div>
+            </div>
+            <div class="refs-block">
+                <div class="refs-label">Sources du jour</div>
+                <div class="refs-list"><a href="https://aws.amazon.com/about-aws/whats-new/2026/04/aurora-serverless-smarter-scaling/" target="_blank" class="ref-link">↗ <span class="ref-source">[AWS What's New]</span> Amazon Aurora serverless: Up to 30% better performance, smarter scaling, and sti...</a><a href="https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-connect-priority-dialing/" target="_blank" class="ref-link">↗ <span class="ref-source">[AWS What's New]</span> Amazon Connect Outbound Campaigns now supports contact priority ordering</a><a href="https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-ebs-four-volume-modifications-european-sovereign-region/" target="_blank" class="ref-link">↗ <span class="ref-source">[AWS What's New]</span> Amazon EBS expands volume modification enhancement to AWS European Sovereign Clo...</a><a href="https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-evs-windows-server-licensing/" target="_blank" class="ref-link">↗ <span class="ref-source">[AWS What's New]</span> Amazon EVS now offers Microsoft Windows Server Licensing</a><a href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-claude-opus-4-7-in-amazon-bedrock-aws-interconnect-ga-and-more-april-20-2026/" target="_blank" class="ref-link">↗ <span class="ref-source">[AWS Blog]</span> AWS Weekly Roundup: Claude Opus 4.7 in Amazon Bedrock, AWS Interconnect GA, and ...</a><a href="https://aws.amazon.com/blogs/aws/introducing-anthropics-claude-opus-4-7-model-in-amazon-bedrock/" target="_blank" class="ref-link">↗ <span class="ref-source">[AWS Blog]</span> Introducing Anthropic’s Claude Opus 4.7 model in Amazon Bedrock</a></div>
+            </div>
+        </section>
+        <section class="cat-section" id="tech--cybersécurité">
+            <div class="cat-header">
+                <span class="cat-icon">🔐</span>
+                <h2 class="cat-title">Tech — Cybersécurité</h2>
+                <span class="cat-meta">32 articles · 8 sources</span>
+            </div>
+            <div class="content-grid">
+                <div class="block synthese-block">
+                    <div class="block-label">Synthèse</div>
+                    <p>Les organisations de sécurité documentent une intensification des menaces multi-acteurs : un membre senior du groupe Scattered Spider a plaidé coupable pour des attaques de phishing SMS ayant volé des dizaines de millions en cryptomonnaies auprès d'entreprises tech en 2022 (Krebs on Security), tandis que l'Allemagne a identifié Daniil Maksimovich Shchukin comme le chef des gangs ransomware REvil et GandCrab (Krebs on Security). Les acteurs étatiques russes exploitent massivement des vulnérabilités dans les routeurs pour siphonner les tokens d'authentification Microsoft Office de plus de 18 000 réseaux sans déployer de malware (Krebs on Security), et l'Iran intensifie ses cyberattaques selon Unit 42. L'émergence de l'IA comme vecteur de vulnérabilité monopolise l'attention : Anthropic a retiré son modèle Claude Mythos jugé trop performant pour détecter et exploiter des failles logicielles (Schneier on Security), une analyse reprise par Unit 42 et Mandiant qui confirment que les modèles d'IA généralistes excellent désormais dans la découverte autonome de vulnérabilités zero-day. Microsoft publie un patch correctif record de 167 vulnérabilités incluant un zero-day SharePoint et une faille Windows Defender "BlueHammer", tandis que Chrome corrige son quatrième zero-day de 2026 (Krebs on Security). Les attaques supply chain se multiplient : acteurs nord-coréens compromettant le package NPM Axios largement utilisé (Mandiant), 22 vulnérabilités BRIDGE:BREAK affectant 20 000 convertisseurs série-IP (The Hacker News), exploitation active d'une faille Bomgar RMM à risque supply chain (Dark Reading), et faille critique dans AWS Bedrock AgentCore permettant l'escalade de privilèges (Unit 42).</p>
+                </div>
+                <div class="block analyse-block">
+                    <div class="block-label">Analyse & enjeux</div>
+                    <p>L'intersection entre IA générative et cybersécurité franchit un seuil critique qui redéfinit l'équilibre attaquant-défenseur. Lorsque des modèles comme Claude Mythos deviennent capables de découvrir et d'exploiter autonomement des vulnérabilités logicielles, ils fonctionnent essentiellement comme des chercheurs en sécurité automatisés qui travaillent 24/7 sans fatigue ni erreur humaine. Concrètement, un modèle d'IA peut désormais analyser du code source, identifier des patterns de vulnérabilités subtiles (buffer overflows, injections, race conditions), générer des exploits fonctionnels et même adapter sa stratégie selon les réponses du système cible. Cette capacité crée une asymétrie dangereuse : pendant que les défenseurs attendent les cycles de patch traditionnels (souvent plusieurs semaines entre découverte et correction), les attaquants équipés d'IA peuvent découvrir et exploiter des failles en quelques heures. Les acteurs étatiques russes l'ont déjà démontré avec leur campagne de vol de tokens Microsoft Office via routeurs compromis : plutôt que de déployer des malwares détectables, ils exploitent des failles matérielles connues pour intercepter silencieusement l'authentification de 18 000 réseaux, une approche "living off the land" difficilement détectable car elle n'injecte aucun code malveillant. Cette technique révèle que les tokens OAuth deviennent la nouvelle surface d'attaque privilégiée, comme l'illustre aussi la brèche Vercel, car ils permettent un accès latéral sans compromettre directement les identifiants.
+
+Les attaques supply chain démontrent une industrialisation croissante où chaque maillon technologique devient vecteur d'infection à grande échelle. Le compromis du package NPM Axios par la Corée du Nord est particulièrement préoccupant : Axios étant utilisé par des millions d'applications Node.js pour les requêtes HTTP, injecter du code malveillant dans ce package reviendrait à installer une porte dérobée simultanément chez des milliers d'entreprises qui téléchargent automatiquement les mises à jour. Les 22 vulnérabilités BRIDGE:BREAK dans les convertisseurs série-IP Lantronix/Silex illustrent un angle mort classique : ces équipements industriels de conversion entre protocoles série et TCP/IP sont omniprésents dans les environnements OT (systèmes de contrôle industriel, infrastructures critiques) mais rarement mis à jour car considérés comme "infrastructure transparente". Les compromettre permet de manipuler les communications entre systèmes industriels et réseaux IP, ouvrant la voie à du</p>
+                </div>
+            </div>
+            <div class="refs-block">
+                <div class="refs-label">Sources du jour</div>
+                <div class="refs-list"><a href="https://krebsonsecurity.com/2026/04/scattered-spider-member-tylerb-pleads-guilty/" target="_blank" class="ref-link">↗ <span class="ref-source">[Krebs on Security]</span> ‘Scattered Spider’ Member ‘Tylerb’ Pleads Guilty</a><a href="https://krebsonsecurity.com/2026/04/patch-tuesday-april-2026-edition/" target="_blank" class="ref-link">↗ <span class="ref-source">[Krebs on Security]</span> Patch Tuesday, April 2026 Edition</a><a href="https://krebsonsecurity.com/2026/04/russia-hacked-routers-to-steal-microsoft-office-tokens/" target="_blank" class="ref-link">↗ <span class="ref-source">[Krebs on Security]</span> Russia Hacked Routers to Steal Microsoft Office Tokens</a><a href="https://krebsonsecurity.com/2026/04/germany-doxes-unkn-head-of-ru-ransomware-gangs-revil-gandcrab/" target="_blank" class="ref-link">↗ <span class="ref-source">[Krebs on Security]</span> Germany Doxes “UNKN,” Head of RU Ransomware Gangs REvil, GandCrab</a><a href="https://www.schneier.com/blog/archives/2026/04/mexican-surveillance-company.html" target="_blank" class="ref-link">↗ <span class="ref-source">[Schneier on Security]</span> Mexican Surveillance Company</a><a href="https://www.schneier.com/blog/archives/2026/04/is-satoshi-nakamoto-really-adam-back.html" target="_blank" class="ref-link">↗ <span class="ref-source">[Schneier on Security]</span> Is “Satoshi Nakamoto” Really Adam Back?</a></div>
+            </div>
+        </section>
+        <section class="cat-section" id="ia-and-llms">
+            <div class="cat-header">
+                <span class="cat-icon">🤖</span>
+                <h2 class="cat-title">IA & LLMs</h2>
+                <span class="cat-meta">8 articles · 2 sources</span>
+            </div>
+            <div class="content-grid">
+                <div class="block synthese-block">
+                    <div class="block-label">Synthèse</div>
+                    <p>OpenAI intensifie son offensive entreprise avec le lancement de Codex Labs en partenariat avec Accenture, PwC et Infosys pour déployer son assistant de développement à grande échelle, atteignant 4 millions d'utilisateurs actifs hebdomadaires (OpenAI Blog, 21/04). L'entreprise diversifie son offre sectorielle avec GPT-Rosalind, un modèle de raisonnement spécialisé pour la recherche en sciences de la vie, la découverte de médicaments et l'analyse génomique (OpenAI Blog, 16/04). Codex évolue vers une plateforme tout-en-un intégrant navigation web, génération d'images, mémoire contextuelle et contrôle direct de l'ordinateur pour accélérer les flux de développement (OpenAI Blog, 16/04). Les déploiements d'entreprise se multiplient, illustrés par Hyatt qui adopte ChatGPT Enterprise avec GPT-5.4 pour l'ensemble de ses équipes mondiales (OpenAI Blog, 20/04). Sur le front technique et géopolitique, Huawei développe HiFloat4, un format d'entraînement qui surpasse le standard occidental MXFP4 sur ses puces Ascend, tandis que des recherches révèlent des lois d'échelle applicables aux capacités offensives en cyberguerre (Import AI, 20/04 et 06/04).</p>
+                </div>
+                <div class="block analyse-block">
+                    <div class="block-label">Analyse & enjeux</div>
+                    <p>Cette séquence d'annonces révèle une stratégie d'OpenAI de verticalisation sectorielle après des années de modèles généralistes : GPT-Rosalind pour les sciences de la vie et Codex Labs pour le développement logiciel visent à capturer des marchés professionnels à haute valeur ajoutée où la personnalisation et l'expertise métier créent des barrières à l'entrée durables. Cette approche transforme OpenAI d'un fournisseur d'API générique en concurrent direct des éditeurs spécialisés, avec des implications majeures pour les entreprises SaaS traditionnelles qui pourraient voir leurs fonctionnalités "intelligentes" commoditisées. Le partenariat avec les grands cabinets de conseil (Accenture, PwC, Infosys) constitue un canal de distribution stratégique : ces acteurs touchent directement les comités de direction et peuvent prescrire massivement l'adoption d'OpenAI dans les transformations numériques, créant un effet de verrouillage écosystémique similaire à ce que Microsoft a réussi avec Office. L'émergence du format HiFloat4 de Huawei signale une bifurcation technologique profonde : la Chine développe sa propre stack d'infrastructures IA, des formats numériques bas niveau jusqu'aux modèles finaux, réduisant sa dépendance aux standards occidentaux et compliquant l'interopérabilité future - un phénomène de fragmentation qui rappelle la séparation Internet/Great Firewall mais au niveau matériel. Les recherches sur les lois d'échelle en cyberguerre (Import AI 452) suggèrent que les capacités offensives en cybersécurité suivent les mêmes courbes de puissance que les performances linguistiques : plus un modèle est grand, meilleur il devient pour découvrir des vulnérabilités et générer des exploits, créant une dynamique d'escalade où la défense nécessite des investissements exponentiels. Pour les acteurs cloud comme AWS, cela impose une double contrainte : sécuriser l'infrastructure contre des attaques IA-assistées toujours plus sophistiquées, tout en proposant des services IA compétitifs sans alimenter un écosystème offensif. La multiplication des déploiements d'entreprise (Hyatt, millions d'utilisateurs Codex) matérialise enfin la promesse économique de l'IA générative après des années d'expérimentation, avec un risque de concentration monopolistique si quelques acteurs captent l'essentiel de la valeur créée par l'automatisation cognitive du travail intellectuel.</p>
+                </div>
+            </div>
+            <div class="refs-block">
+                <div class="refs-label">Sources du jour</div>
+                <div class="refs-list"><a href="https://openai.com/index/scaling-codex-to-enterprises-worldwide" target="_blank" class="ref-link">↗ <span class="ref-source">[OpenAI Blog]</span> Scaling Codex to enterprises worldwide</a><a href="https://openai.com/index/hyatt-advances-ai-with-chatgpt-enterprise" target="_blank" class="ref-link">↗ <span class="ref-source">[OpenAI Blog]</span> OpenAI helps Hyatt advance AI among colleagues</a><a href="https://openai.com/index/codex-for-almost-everything" target="_blank" class="ref-link">↗ <span class="ref-source">[OpenAI Blog]</span> Codex for (almost) everything</a><a href="https://openai.com/index/introducing-gpt-rosalind" target="_blank" class="ref-link">↗ <span class="ref-source">[OpenAI Blog]</span> Introducing GPT-Rosalind for life sciences research</a><a href="https://jack-clark.net/2026/04/20/import-ai-454-automating-alignment-research-safety-study-of-a-chinese-model-hifloat4/" target="_blank" class="ref-link">↗ <span class="ref-source">[Import AI]</span> Import AI 454: Automating alignment research; safety study of a Chinese model; H...</a><a href="https://jack-clark.net/2026/04/13/import-ai-453-breaking-ai-agents-mirrorcode-and-ten-views-on-gradual-disempowerment/" target="_blank" class="ref-link">↗ <span class="ref-source">[Import AI]</span> Import AI 453: Breaking AI agents; MirrorCode; and ten views on gradual disempow...</a></div>
+            </div>
+        </section>
+        <section class="cat-section" id="finance-and-macro">
+            <div class="cat-header">
+                <span class="cat-icon">📈</span>
+                <h2 class="cat-title">Finance & Macro</h2>
+                <span class="cat-meta">8 articles · 2 sources</span>
+            </div>
+            <div class="content-grid">
+                <div class="block synthese-block">
+                    <div class="block-label">Synthèse</div>
+                    <p>La situation géopolitique au Moyen-Orient connaît des développements majeurs avec l'annonce de Donald Trump d'un possible "grand accord" avec l'Iran, bien que Téhéran n'ait pas encore décidé de participer aux négociations prévues au Pakistan (Financial Times). Parallèlement, des dizaines de pétroliers iraniens contournent le blocus américain dans le Golfe, plusieurs d'entre eux chargés de pétrole brut (Financial Times). Sur le dossier de Gaza, le "Board of Peace" de Trump a tenu des discussions avec DP World, le géant portuaire émirati, pour confier la gestion des chaînes logistiques dans le cadre de la reconstruction de l'enclave dévastée (Financial Times). Dans le secteur technologique, Apple connaît une transition historique avec Tim Cook annonçant son départ du poste de CEO après 15 ans de règne, tout en assurant qu'il restera président exécutif "longtemps" car il est "en bonne santé" (Bloomberg). Son successeur sera John Ternus, entré chez Apple en 2001 et qui prendra les rênes en septembre 2026 (Bloomberg). Du côté du secteur de la distribution, Home Depot investit des milliards pour élargir sa clientèle vers les entrepreneurs professionnels, alors que le ralentissement économique américain pèse sur les consommateurs DIY traditionnels (Financial Times).</p>
+                </div>
+                <div class="block analyse-block">
+                    <div class="block-label">Analyse & enjeux</div>
+                    <p>Les tentatives de rapprochement américano-iranien révèlent une reconfiguration profonde des équilibres au Moyen-Orient, où Washington tente de résoudre diplomatiquement un conflit qui structure la région depuis des décennies. L'enjeu dépasse le nucléaire : il s'agit de redéfinir l'architecture sécuritaire régionale, avec des implications directes sur les flux énergétiques mondiaux et la stabilité du détroit d'Ormuz, par où transite environ 20% du pétrole mondial. Le contournement du blocus par les pétroliers iraniens illustre l'inefficacité croissante des sanctions unilatérales dans un monde multipolaire où des acteurs comme la Chine offrent des débouchés alternatifs. L'implication de DP World dans la reconstruction de Gaza signale une stratégie américaine visant à confier la stabilisation post-conflit à des acteurs régionaux pro-occidentaux, notamment les Émirats, transformant ainsi la logistique humanitaire en levier d'influence géopolitique à long terme. La transition chez Apple marque la fin d'une ère exceptionnelle où Cook a multiplié la capitalisation de l'entreprise par plus de dix, mais soulève des questions critiques sur la capacité d'innovation future dans un contexte de concurrence accrue avec la Chine sur l'IA et les semi-conducteurs – des technologies stratégiques pour la souveraineté numérique. Pour le cloud et la cybersécurité, cette transition intervient alors qu'Apple renforce ses datacenters et ses capacités d'IA, avec des implications pour la protection des données de milliards d'utilisateurs. Le repositionnement de Home Depot vers les professionnels reflète une transformation structurelle de l'économie américaine où le consommateur moyen, fragilisé par l'inflation et les taux d'intérêt élevés, réduit ses dépenses discrétionnaires, forçant les entreprises à chercher des segments plus résilients et à forte récurrence.</p>
+                </div>
+            </div>
+            <div class="refs-block">
+                <div class="refs-label">Sources du jour</div>
+                <div class="refs-list"><a href="https://www.ft.com/content/18c234e2-019a-448d-bf17-35bb2c146add" target="_blank" class="ref-link">↗ <span class="ref-source">[FT]</span> Trump expects ‘great deal’ with Iran amid uncertainty over peace talks</a><a href="https://www.ft.com/content/21dff2c7-1e27-4f74-81d8-31dcdbe9188e" target="_blank" class="ref-link">↗ <span class="ref-source">[FT]</span> Iranian tankers bypass US blockade</a><a href="https://www.ft.com/content/873b866b-fd17-426d-8cb1-a34566e2e1d4" target="_blank" class="ref-link">↗ <span class="ref-source">[FT]</span> Trump’s ‘Board of Peace’ held talks with DP World over Gaza reconstruction</a><a href="https://www.ft.com/content/a4a4ffc0-7b65-4040-bd3e-8b6a205c1910" target="_blank" class="ref-link">↗ <span class="ref-source">[FT]</span> Home Depot courts contractors as US economy weighs on the DIY set</a><a href="https://www.bloomberg.com/news/videos/2026-04-21/apple-ceo-tim-cook-s-15-year-legacy-by-the-numbers-video" target="_blank" class="ref-link">↗ <span class="ref-source">[Bloomberg Technology]</span> Apple CEO Tim Cook’s 15-Year Legacy by the Numbers</a><a href="https://www.bloomberg.com/news/articles/2026-04-21/apple-s-cook-says-he-s-healthy-will-be-chairman-for-long-time" target="_blank" class="ref-link">↗ <span class="ref-source">[Bloomberg Technology]</span> Apple’s Cook Says He’s ‘Healthy,’ Will Be Chairman for Long Time</a></div>
+            </div>
+        </section>
+</main>
+<footer class="footer">
+    Généré automatiquement · 21 April 2026 · Claude Sonnet
+</footer>
+</body>
+</html>
