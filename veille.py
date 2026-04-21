@@ -334,7 +334,7 @@ def generate_html(results, date_str):
         {date_str}<br>
         {total_sources} sources agrégées
         <div class="header-nav">
-            <a href="index.html">← Toutes les éditions</a>
+            <a href="../index.html">← Toutes les éditions</a>
         </div>
     </div>
 </header>
