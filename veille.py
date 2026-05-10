@@ -1,7 +1,7 @@
 import glob
 import os
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from urllib.error import URLError
 from urllib.request import Request, urlopen
 
@@ -118,6 +118,7 @@ CATEGORY_ICONS = {
 }
 
 ARTICLES_PAR_SOURCE = 10
+MAX_AGE_HOURS = 48
 FETCH_TIMEOUT_SECONDS = 12
 REQUEST_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -136,13 +137,18 @@ def fetch_articles(feeds):
                 with urlopen(request, timeout=FETCH_TIMEOUT_SECONDS) as response:
                     raw_feed = response.read()
                 feed = feedparser.parse(raw_feed)
+                cutoff = datetime.now(timezone.utc) - timedelta(hours=MAX_AGE_HOURS)
+                fresh = []
                 for entry in feed.entries[:ARTICLES_PAR_SOURCE]:
                     published = None
                     if hasattr(entry, "published_parsed") and entry.published_parsed:
                         published = datetime(
                             *entry.published_parsed[:6], tzinfo=timezone.utc
                         )
-                    articles.append(
+                    # Skip articles older than cutoff; keep undated ones (assume recent)
+                    if published and published < cutoff:
+                        continue
+                    fresh.append(
                         {
                             "source": name,
                             "title": entry.get("title", "Sans titre"),
@@ -155,8 +161,9 @@ def fetch_articles(feeds):
                             else "Date inconnue",
                         }
                     )
+                articles.extend(fresh)
                 print(
-                    f"  ✓ {name} — {len(feed.entries[:ARTICLES_PAR_SOURCE])} articles"
+                    f"  ✓ {name} — {len(fresh)} articles récents (sur {len(feed.entries[:ARTICLES_PAR_SOURCE])})"
                 )
             except (TimeoutError, URLError) as e:
                 print(f"  ✗ {name} — Timeout/réseau : {e}")
